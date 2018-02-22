@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="01e47085ea87448e836d6d41f12d91d2" Name="Diagram1">
+        <EntityTypeShape EntityType="MobileStoreModel.Category" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileStoreModel.Color" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileStoreModel.PaymentBill" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileStoreModel.PaymentBillProduct" Width="1.5" PointX="7.5" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileStoreModel.Product" Width="1.5" PointX="5.25" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileStoreModel.ProductQuantity" Width="1.5" PointX="10.5" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileStoreModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileStoreModel.Users" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileStoreModel.Vendor" Width="1.5" PointX="3" PointY="15.25" IsExpanded="true" />
+        <AssociationConnector Association="MobileStoreModel.FK__Category__Create__1273C1CD" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileStoreModel.FK__Color__CreatedBy__15502E78" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileStoreModel.FK__Product__ColorId__1BFD2C07" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileStoreModel.FK__PaymentBi__Creat__239E4DCF" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileStoreModel.FK__PaymentBi__Payme__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileStoreModel.FK__PaymentBi__Creat__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileStoreModel.FK__PaymentBi__Produ__276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileStoreModel.FK__Product__Created__1CF15040" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileStoreModel.FK__Product__VId__1B0907CE" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileStoreModel.FK__ProductQuan__PId__1FCDBCEB" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileStoreModel.FK__ProductQu__Creat__20C1E124" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileStoreModel.FK__Vendor__CreatedB__182C9B23" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

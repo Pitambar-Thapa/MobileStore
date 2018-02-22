@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MobileStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="Status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Color">
+    <Key>
+      <PropertyRef Name="ColorID" />
+    </Key>
+    <Property Name="ColorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ColorName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="Status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PaymentBill">
+    <Key>
+      <PropertyRef Name="PaymentID" />
+    </Key>
+    <Property Name="PaymentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="500" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="ContactNumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="CalculatedAmount" Type="money" Nullable="false" />
+    <Property Name="Discount" Type="money" />
+    <Property Name="TotalAmount" Type="money" Nullable="false" />
+    <Property Name="ReceivedAmount" Type="money" Nullable="false" />
+    <Property Name="ReturnedAmount" Type="money" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="Status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PaymentBillProduct">
+    <Key>
+      <PropertyRef Name="PaymentBillID" />
+    </Key>
+    <Property Name="PaymentBillID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaymentId" Type="int" />
+    <Property Name="ProductId" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="Status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="PDetails" Type="nvarchar(max)" />
+    <Property Name="VId" Type="int" />
+    <Property Name="ModelNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="ColorId" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CategoryId" Type="int" />
+  </EntityType>
+  <EntityType Name="ProductQuantity">
+    <Key>
+      <PropertyRef Name="PQID" />
+    </Key>
+    <Property Name="PQID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PId" Type="int" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="Rate" Type="money" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="Status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="MName" Type="nvarchar" MaxLength="250" />
+    <Property Name="LName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="ContactNumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="Status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vendor">
+    <Key>
+      <PropertyRef Name="VendorID" />
+    </Key>
+    <Property Name="VendorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="Status" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Category__Create__1273C1CD">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Category" Type="Self.Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Category">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Color__CreatedBy__15502E78">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Color" Type="Self.Color" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Color">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PaymentBi__Creat__239E4DCF">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="PaymentBill" Type="Self.PaymentBill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="PaymentBill">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PaymentBi__Creat__286302EC">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="PaymentBillProduct" Type="Self.PaymentBillProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="PaymentBillProduct">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PaymentBi__Payme__267ABA7A">
+    <End Role="PaymentBill" Type="Self.PaymentBill" Multiplicity="0..1" />
+    <End Role="PaymentBillProduct" Type="Self.PaymentBillProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PaymentBill">
+        <PropertyRef Name="PaymentID" />
+      </Principal>
+      <Dependent Role="PaymentBillProduct">
+        <PropertyRef Name="PaymentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PaymentBi__Produ__276EDEB3">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="PaymentBillProduct" Type="Self.PaymentBillProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="PaymentBillProduct">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product__ColorId__1BFD2C07">
+    <End Role="Color" Type="Self.Color" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Color">
+        <PropertyRef Name="ColorID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="ColorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product__Created__1CF15040">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product__VId__1B0907CE">
+    <End Role="Vendor" Type="Self.Vendor" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vendor">
+        <PropertyRef Name="VendorID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="VId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProductQu__Creat__20C1E124">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="ProductQuantity" Type="Self.ProductQuantity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="ProductQuantity">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProductQuan__PId__1FCDBCEB">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="ProductQuantity" Type="Self.ProductQuantity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="ProductQuantity">
+        <PropertyRef Name="PId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Vendor__CreatedB__182C9B23">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Vendor" Type="Self.Vendor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Vendor">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="spGetProductDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="MobileStoreModelStoreContainer">
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Color" EntityType="Self.Color" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaymentBill" EntityType="Self.PaymentBill" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaymentBillProduct" EntityType="Self.PaymentBillProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductQuantity" EntityType="Self.ProductQuantity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vendor" EntityType="Self.Vendor" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Category__Create__1273C1CD" Association="Self.FK__Category__Create__1273C1CD">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Category" EntitySet="Category" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Color__CreatedBy__15502E78" Association="Self.FK__Color__CreatedBy__15502E78">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Color" EntitySet="Color" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PaymentBi__Creat__239E4DCF" Association="Self.FK__PaymentBi__Creat__239E4DCF">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="PaymentBill" EntitySet="PaymentBill" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PaymentBi__Creat__286302EC" Association="Self.FK__PaymentBi__Creat__286302EC">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="PaymentBillProduct" EntitySet="PaymentBillProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PaymentBi__Payme__267ABA7A" Association="Self.FK__PaymentBi__Payme__267ABA7A">
+      <End Role="PaymentBill" EntitySet="PaymentBill" />
+      <End Role="PaymentBillProduct" EntitySet="PaymentBillProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PaymentBi__Produ__276EDEB3" Association="Self.FK__PaymentBi__Produ__276EDEB3">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="PaymentBillProduct" EntitySet="PaymentBillProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product__ColorId__1BFD2C07" Association="Self.FK__Product__ColorId__1BFD2C07">
+      <End Role="Color" EntitySet="Color" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product__Created__1CF15040" Association="Self.FK__Product__Created__1CF15040">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product__VId__1B0907CE" Association="Self.FK__Product__VId__1B0907CE">
+      <End Role="Vendor" EntitySet="Vendor" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProductQu__Creat__20C1E124" Association="Self.FK__ProductQu__Creat__20C1E124">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="ProductQuantity" EntitySet="ProductQuantity" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProductQuan__PId__1FCDBCEB" Association="Self.FK__ProductQuan__PId__1FCDBCEB">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductQuantity" EntitySet="ProductQuantity" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Vendor__CreatedB__182C9B23" Association="Self.FK__Vendor__CreatedB__182C9B23">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Vendor" EntitySet="Vendor" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
